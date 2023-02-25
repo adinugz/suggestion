@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Saling Berbalas Pesan Anonim</title>
+    <title>Saling Berbalas Pesan Anonim dan Saran</title>
     <style>
       /* Style untuk kolom pesan */
       #pesan {
@@ -70,6 +70,47 @@
       #pesan li small {
         font-style: italic;
       }
+
+      /* Style untuk kolom saran */
+      #saran {
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+      }
+
+      #saran h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      #saran form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      #saran form label {
+        margin-bottom: 5px;
+      }
+
+      #saran form textarea {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+
+      #saran form input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -80,44 +121,4 @@
         <input type="text" id="nama" name="nama" required>
 
         <label for="pesan">Pesan:</label>
-        <textarea id="pesan" name="pesan" required></textarea>
-
-        <input type="submit" value="Kirim">
-      </form>
-
-      <ul id="daftar-pesan"></ul>
-    </div>
-
-    <script>
-      // Buat objek pesan
-      var pesan = [];
-
-      // Script untuk menambahkan pesan
-      function addMessage() {
-        // Ambil nilai dari input form
-        var nama = document.getElementById("nama").value;
-        var pesan = document.getElementById("pesan").value;
-
-        // Tambahkan pesan ke objek pesan
-        pesan.push({
-          nama: nama,
-          pesan: pesan,
-        });
-
-        // Bersihkan input form
-        document.getElementById("nama").value = "";
-        document.getElementById("pesan").value = "";
-
-        // Tampilkan daftar pesan
-        displayMessages();
-      }
-
-      // Script untuk menampilkan daftar pesan
-      function displayMessages() {
-        // Ambil elemen daftar pesan
-        var daftarPesan = document.getElementById("daftar-pesan");
-
-        // Bersihkan elemen daftar pesan
-        daftarPesan.innerHTML = "";
-
-        // Tampilkan set
+        <textarea id="pesan"
