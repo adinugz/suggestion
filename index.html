@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Saling Berbalas Pesan Anonim dan Saran</title>
+    <title>Berbalas Komentar seperti Facebook</title>
     <style>
-      /* Style untuk kolom pesan */
-      #pesan {
+      /* Style untuk kolom komentar */
+      #komentar {
         width: 80%;
         margin: auto;
         padding: 10px;
@@ -13,29 +13,29 @@
         box-shadow: 0 0 5px #ccc;
       }
 
-      #pesan h2 {
+      #komentar h2 {
         font-size: 24px;
         margin-bottom: 10px;
       }
 
-      #pesan form {
+      #komentar form {
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
       }
 
-      #pesan form label {
+      #komentar form label {
         margin-bottom: 5px;
       }
 
-      #pesan form textarea {
+      #komentar form textarea {
         padding: 5px;
         border-radius: 3px;
         border: 1px solid #ccc;
         margin-bottom: 10px;
       }
 
-      #pesan form input[type="submit"] {
+      #komentar form input[type="submit"] {
         background-color: #4caf50;
         color: #fff;
         padding: 5px 10px;
@@ -44,13 +44,7 @@
         cursor: pointer;
       }
 
-      #pesan ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      #pesan li {
+      #komentar .komentar {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
@@ -58,21 +52,21 @@
         box-shadow: 0 0 5px #ccc;
       }
 
-      #pesan li h3 {
+      #komentar .komentar h3 {
         font-size: 18px;
         margin-bottom: 5px;
       }
 
-      #pesan li p {
+      #komentar .komentar p {
         margin-bottom: 5px;
       }
 
-      #pesan li small {
+      #komentar .komentar small {
         font-style: italic;
       }
 
-      /* Style untuk kolom saran */
-      #saran {
+      /* Style untuk kolom balasan */
+      #balasan {
         width: 80%;
         margin: auto;
         padding: 10px;
@@ -81,29 +75,29 @@
         box-shadow: 0 0 5px #ccc;
       }
 
-      #saran h2 {
-        font-size: 24px;
+      #balasan h3 {
+        font-size: 18px;
         margin-bottom: 10px;
       }
 
-      #saran form {
+      #balasan form {
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
       }
 
-      #saran form label {
+      #balasan form label {
         margin-bottom: 5px;
       }
 
-      #saran form textarea {
+      #balasan form textarea {
         padding: 5px;
         border-radius: 3px;
         border: 1px solid #ccc;
         margin-bottom: 10px;
       }
 
-      #saran form input[type="submit"] {
+      #balasan form input[type="submit"] {
         background-color: #4caf50;
         color: #fff;
         padding: 5px 10px;
@@ -111,14 +105,22 @@
         border-radius: 3px;
         cursor: pointer;
       }
-    </style>
-  </head>
-  <body>
-    <div id="pesan">
-      <h2>Saling Berbalas Pesan Anonim</h2>
-      <form onsubmit="addMessage(); return false;">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
 
-        <label for="pesan">Pesan:</label>
-        <textarea id="pesan"
+      #balasan .balasan {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 5px #ccc;
+      }
+
+      #balasan .balasan h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      #balasan .balasan p {
+        margin-bottom: 5px;
+      }
+
+      #bal
