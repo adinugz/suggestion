@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kolom Komentar</title>
+    <style>
+      /* Style untuk kolom komentar */
+      #komentar {
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+      }
+
+      #komentar h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      #komentar form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      #komentar form label {
+        margin-bottom: 5px;
+      }
+
+      #komentar form input[type="text"],
+      #komentar form textarea {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+
+      #komentar form input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      #komentar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #komentar li {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 5px #ccc;
+      }
+
+      #komentar li h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      #komentar li p {
+        margin-bottom: 5px;
+      }
+
+      #komentar li small {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="komentar">
+      <h2>Kolom Komentar</h2>
+      <form onsubmit="addComment(); return false;">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="komentar">Komentar:</label>
+        <textarea id="komentar" name="komentar" required></textarea>
+
+        <input type="submit" value="Kirim">
+      </form>
+
+      <ul id="daftar-komentar"></ul>
+    </div>
+
+    <script>
+      // Script untuk menambahkan komentar
+      function addComment() {
+        // Ambil nilai dari input form
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+        var komentar = document.getElementById("komentar").value;
+
+        // Buat elemen baru untuk menampilkan komentar
+        var li = document.createElement("li");
+        var h3 = document.createElement("h3");
+        var p1 = document.createElement("p");
+        var p2 = document.createElement("p");
+        var small = document.createElement("small");
+
+        // Masukkan nilai input ke dalam elemen baru
+        h3.textContent = nama;
+        p1.textContent = kom
