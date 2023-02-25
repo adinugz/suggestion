@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kolom Komentar</title>
+    <title>Saling Berbalas Pesan Anonim</title>
     <style>
-      /* Style untuk kolom komentar */
-      #komentar {
+      /* Style untuk kolom pesan */
+      #pesan {
         width: 80%;
         margin: auto;
         padding: 10px;
@@ -13,30 +13,29 @@
         box-shadow: 0 0 5px #ccc;
       }
 
-      #komentar h2 {
+      #pesan h2 {
         font-size: 24px;
         margin-bottom: 10px;
       }
 
-      #komentar form {
+      #pesan form {
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
       }
 
-      #komentar form label {
+      #pesan form label {
         margin-bottom: 5px;
       }
 
-      #komentar form input[type="text"],
-      #komentar form textarea {
+      #pesan form textarea {
         padding: 5px;
         border-radius: 3px;
         border: 1px solid #ccc;
         margin-bottom: 10px;
       }
 
-      #komentar form input[type="submit"] {
+      #pesan form input[type="submit"] {
         background-color: #4caf50;
         color: #fff;
         padding: 5px 10px;
@@ -45,13 +44,13 @@
         cursor: pointer;
       }
 
-      #komentar ul {
+      #pesan ul {
         list-style: none;
         margin: 0;
         padding: 0;
       }
 
-      #komentar li {
+      #pesan li {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
@@ -59,54 +58,66 @@
         box-shadow: 0 0 5px #ccc;
       }
 
-      #komentar li h3 {
+      #pesan li h3 {
         font-size: 18px;
         margin-bottom: 5px;
       }
 
-      #komentar li p {
+      #pesan li p {
         margin-bottom: 5px;
       }
 
-      #komentar li small {
+      #pesan li small {
         font-style: italic;
       }
     </style>
   </head>
   <body>
-    <div id="komentar">
-      <h2>Kolom Komentar</h2>
-      <form onsubmit="addComment(); return false;">
+    <div id="pesan">
+      <h2>Saling Berbalas Pesan Anonim</h2>
+      <form onsubmit="addMessage(); return false;">
         <label for="nama">Nama:</label>
         <input type="text" id="nama" name="nama" required>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-
-        <label for="komentar">Komentar:</label>
-        <textarea id="komentar" name="komentar" required></textarea>
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" required></textarea>
 
         <input type="submit" value="Kirim">
       </form>
 
-      <ul id="daftar-komentar"></ul>
+      <ul id="daftar-pesan"></ul>
     </div>
 
     <script>
-      // Script untuk menambahkan komentar
-      function addComment() {
+      // Buat objek pesan
+      var pesan = [];
+
+      // Script untuk menambahkan pesan
+      function addMessage() {
         // Ambil nilai dari input form
         var nama = document.getElementById("nama").value;
-        var email = document.getElementById("email").value;
-        var komentar = document.getElementById("komentar").value;
+        var pesan = document.getElementById("pesan").value;
 
-        // Buat elemen baru untuk menampilkan komentar
-        var li = document.createElement("li");
-        var h3 = document.createElement("h3");
-        var p1 = document.createElement("p");
-        var p2 = document.createElement("p");
-        var small = document.createElement("small");
+        // Tambahkan pesan ke objek pesan
+        pesan.push({
+          nama: nama,
+          pesan: pesan,
+        });
 
-        // Masukkan nilai input ke dalam elemen baru
-        h3.textContent = nama;
-        p1.textContent = kom
+        // Bersihkan input form
+        document.getElementById("nama").value = "";
+        document.getElementById("pesan").value = "";
+
+        // Tampilkan daftar pesan
+        displayMessages();
+      }
+
+      // Script untuk menampilkan daftar pesan
+      function displayMessages() {
+        // Ambil elemen daftar pesan
+        var daftarPesan = document.getElementById("daftar-pesan");
+
+        // Bersihkan elemen daftar pesan
+        daftarPesan.innerHTML = "";
+
+        // Tampilkan set
